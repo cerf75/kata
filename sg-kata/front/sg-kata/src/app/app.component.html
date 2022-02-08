@@ -1,0 +1,25 @@
+<div class="container w-25">
+  <div class="card">
+    <div class="card-header bg-info text-center fs-3">
+      SG Kata Bank Account Front End
+    </div>
+    <div class="card-body border-info">
+      <form>
+        <div class="mb-3">
+          <label for="iban" class="form-label">IBAN:</label>
+          <input id="iban" name="iban" type="text" [(ngModel)]="iban" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount:</label>
+          <input id="amount" name="amount" type="number" [(ngModel)]="amount" class="form-control">
+        </div>
+        <div class="mb-3 d-flex flex-row justify-content-around">
+          <button type="button" (click)="deposit()">Deposit</button>
+          <button type="button" (click)="withdraw()">Withdraw</button>
+          <a [href]="sanitizedUrl">Download Statement</a>
+        </div>
+      </form>
+      {{response$ | async}}
+    </div>
+  </div>
+</div>
